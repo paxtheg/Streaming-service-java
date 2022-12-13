@@ -114,7 +114,8 @@ public final class BackendApplication {
     }
 
     public List<Movie> getAvailableMovies() {
-        return filteredMovies.stream().filter(m -> !m.getCountriesBanned().contains(currentUser.getCredentials().getCountry())).toList();
+        return filteredMovies.stream().filter(m -> !m.getCountriesBanned().
+                contains(currentUser.getCredentials().getCountry())).toList();
     }
 
     public void setFilteredMovies(final List<Movie> filteredMovies) {
@@ -162,7 +163,8 @@ public final class BackendApplication {
         return users.stream().filter(u -> u.getCredentials().equals(credentials)).findFirst();
     }
 
-    public void startBackend(final String inputPath, final String outputPath) throws CloneNotSupportedException {
+    public void startBackend(final String inputPath,
+                             final String outputPath) throws CloneNotSupportedException {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -181,8 +183,9 @@ public final class BackendApplication {
         for (Action action : actions) {
             app.Error error = action.apply();
             if (error != null) {
-                if (error.getCurrentUser() != null)
+                if (error.getCurrentUser() != null) {
                     error.setCurrentUser((User) error.getCurrentUser().clone());
+                }
                 List<Movie> copies = new ArrayList<>();
                 for (Movie movie : error.getCurrentMoviesList()) {
                     copies.add((Movie) movie.clone());

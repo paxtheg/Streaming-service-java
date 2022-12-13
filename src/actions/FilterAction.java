@@ -10,7 +10,8 @@ import java.util.List;
 public final class FilterAction extends OnPageAction {
     private final Filter filter;
 
-    public FilterAction(final String type, final String page, final String feature, final Filter filter) {
+    public FilterAction(final String type, final String page,
+                        final String feature, final Filter filter) {
         super(type, page, feature);
         this.filter = filter;
     }
@@ -28,10 +29,14 @@ public final class FilterAction extends OnPageAction {
                 List<String> actorSort = filter.getContains().get("actors");
                 List<String> genreSort = filter.getContains().get("genre");
 
-                if (actorSort != null)
-                    movies = new ArrayList<>(movies.stream().filter(m -> !Collections.disjoint(m.getActors(), actorSort)).toList());
-                if (genreSort != null)
-                    movies = new ArrayList<>(movies.stream().filter(m -> !Collections.disjoint(m.getGenres(), genreSort)).toList());
+                if (actorSort != null) {
+                    movies = new ArrayList<>(movies.stream().filter(m -> !Collections.
+                            disjoint(m.getActors(), actorSort)).toList());
+                }
+                if (genreSort != null) {
+                    movies = new ArrayList<>(movies.stream().filter(m -> !Collections.
+                            disjoint(m.getGenres(), genreSort)).toList());
+                }
             }
 
             if (filter.getSort() != null) {

@@ -11,7 +11,7 @@ public final class Filter {
         return sort;
     }
 
-    public void setSort(HashMap<String, SortType> sort) {
+    public void setSort(final HashMap<String, SortType> sort) {
         this.sort = sort;
     }
 
@@ -19,7 +19,7 @@ public final class Filter {
         return contains;
     }
 
-    public void setContains(HashMap<String, List<String>> contains) {
+    public void setContains(final HashMap<String, List<String>> contains) {
         this.contains = contains;
     }
 }

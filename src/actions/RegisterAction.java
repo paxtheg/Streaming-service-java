@@ -10,7 +10,8 @@ import java.util.Optional;
 public final class RegisterAction extends OnPageAction {
     private final Credentials credentials;
 
-    public RegisterAction(final String type, final String page, final String feature, final Credentials credentials) {
+    public RegisterAction(final String type, final String page,
+                          final String feature, final Credentials credentials) {
         super(type, page, feature);
         this.credentials = credentials;
     }

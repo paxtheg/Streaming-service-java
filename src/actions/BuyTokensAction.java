@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public final class BuyTokensAction extends OnPageAction {
     private final String count;
 
-    public BuyTokensAction(final String type, final String page, final String feature, final String count) {
+    public BuyTokensAction(final String type, final String page,
+                           final String feature, final String count) {
         super(type, page, feature);
         this.count = count;
     }
@@ -23,7 +24,7 @@ public final class BuyTokensAction extends OnPageAction {
             int noTokens = currentUser.getTokensCount();
             int balance = Integer.parseInt(currentUser.getCredentials().getBalance());
             int countInt = Integer.parseInt(count);
-            if(countInt <= balance) {
+            if (countInt <= balance) {
                 currentUser.setTokensCount(noTokens + countInt);
                 currentUser.getCredentials().setBalance(String.valueOf(balance - countInt));
                 return null;

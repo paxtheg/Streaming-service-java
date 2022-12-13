@@ -25,8 +25,9 @@ public final class RateAction extends OnPageAction {
         if (currentPage.equals("see details")) {
             User currentUser = app.getCurrentUser();
             Movie movie = app.getCurrentMovie();
-            if (rate < minRate | rate > maxRate)
+            if (rate < minRate | rate > maxRate) {
                 return new app.Error("Error", new ArrayList<>(), null);
+            }
             if (currentUser.getWatchedMovies().contains(movie)) {
                 movie.incrementNumRatings();
                 movie.getRatings().add(rate);

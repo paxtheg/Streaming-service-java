@@ -9,7 +9,8 @@ import java.util.List;
 public final class SearchAction extends OnPageAction {
     private final String startsWith;
 
-    public SearchAction(final String type, final String page, final String feature, final String startsWith) {
+    public SearchAction(final String type, final String page,
+                        final String feature, final String startsWith) {
         super(type, page, feature);
         this.startsWith = startsWith;
     }
@@ -23,7 +24,8 @@ public final class SearchAction extends OnPageAction {
         if (currentPage.equals("movies")) {
             app.setFilteredMovies(app.getMovies());
             List<Movie> movies = app.getAvailableMovies();
-            List<Movie> filtered = movies.stream().filter(m -> m.getName().startsWith(startsWith)).toList();
+            List<Movie> filtered = movies.stream().filter(m -> m.
+                    getName().startsWith(startsWith)).toList();
             app.setFilteredMovies(filtered);
             return new app.Error(null, filtered, app.getCurrentUser());
         }
