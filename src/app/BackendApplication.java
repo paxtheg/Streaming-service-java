@@ -167,6 +167,7 @@ public final class BackendApplication {
                              final String outputPath) throws CloneNotSupportedException {
         ObjectMapper mapper = new ObjectMapper();
 
+        //reads the data from the json tests using the DataParser class
         try {
             File inputFile = new File(inputPath);
 
@@ -180,6 +181,7 @@ public final class BackendApplication {
             throw new RuntimeException(e);
         }
 
+        //parses through every action, executes it and saves the output in errors
         for (Action action : actions) {
             app.Error error = action.apply();
             if (error != null) {
@@ -197,6 +199,7 @@ public final class BackendApplication {
 
         mapper = new ObjectMapper();
 
+        //prints the actions output in the output file
         try {
             ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
             File outputFile = new File(outputPath);

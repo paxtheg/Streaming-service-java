@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActionFactory {
+    //executes the action from the input with the required fields
     public static Action createAction(final ActionData data) {
         return switch (data.getType()) {
             case "change page" -> new ChangePageAction(data.getType(),

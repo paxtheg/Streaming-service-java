@@ -6,6 +6,7 @@ import data.User;
 import java.util.List;
 
 public final class Error {
+    //used for saving the output of actions
     private String error;
     private List<Movie> currentMoviesList;
     private User currentUser;

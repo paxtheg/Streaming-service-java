@@ -20,7 +20,7 @@ Starting audit...
 [ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\checker\CheckStyleConstants.java:3:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\data\Movie.java:91:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\Main.java:3:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\Main.java:4:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\Main.java:7:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] C:\Users\Sebi-PC\Documents\GitHub\proiect_oop_etapa1\.\src\Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
 Audit done.
 Checkstyle ends with 23 errors.
