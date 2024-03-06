@@ -1,1 +1,1 @@
-The project contains the functionality of the actions that can be performed on a streaming service. It allows its users to perform various actions, they can either "choose movie", or "create account" or many more
+
